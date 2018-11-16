@@ -38,7 +38,7 @@
     <string name="AltaPubTitulo">Titulo</string>
     <string name="AltaPubSubtitulo">Subtitulo</string>
     <string name="AltaPubCuerpo">Cuerpo</string>
-    <string name="AltaPubIntereses"></string>
+    <string name="AltaPubIntereses">Intereses</string>
 
 
 </resources>

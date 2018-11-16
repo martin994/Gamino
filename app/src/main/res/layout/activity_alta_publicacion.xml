@@ -45,7 +45,7 @@
         android:layout_height="143dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:scrollbarSize="?android:attr/autofillDatasetPickerMaxHeight" />
+        />
 
     <TextView
         android:id="@+id/altaPubTVInteres"
