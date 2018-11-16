@@ -21,10 +21,10 @@
     <string name="ConfIntereses">Agregar intereses</string>
     <string name="ConfCapturar">Capturar foto</string>
     <string name="ConfCargar">Cargar foto</string>
-    <string name="ConfOmitir">Omitir</string>
+    <string name="ConfAvanzar">Avanzar</string>
     <string name="ConfUsuario">Usuario</string>
 
-    <!-- Strings de pantalla Publicacion (ver) -->
+    <!-- Strings de pantalla VerPublicacion (ver) -->
     <string name="PubTitulo">Como ser tanke!</string>
     <string name="PubSubtitulo">Guía de aprendizaje de Reinhard</string>
     <string name="PubCuerpo">Reinhard es un heroe de rol tanke, posee un gran escudo con el que puede bloquear ataques enemigos y proteger su equipo</string>
