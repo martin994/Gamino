@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Publicacion">
+
+    <TextView
+        android:id="@+id/publicacionTVTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/PubTitulo"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/publicacionTVSubtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="@string/PubSubtitulo"
+        android:textColor="#303030"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/publicacionTVCuerpo"
+        android:layout_width="match_parent"
+        android:layout_height="244dp"
+        android:text="@string/PubCuerpo"
+        android:textColor="#303030"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/publicacionBTNComentar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/PubComentar" />
+</LinearLayout>

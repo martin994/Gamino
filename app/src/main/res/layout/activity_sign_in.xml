@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".Sign_in">
+
+    <TextView
+        android:id="@+id/signTVCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/SignEmail" />
+
+    <EditText
+        android:id="@+id/signETCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/signTVUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/SignUsuario" />
+
+    <EditText
+        android:id="@+id/signETUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/signTVContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/SignContraseña" />
+
+    <EditText
+        android:id="@+id/signETContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/signTVConfirmarContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/SignConfirmarContraseña" />
+
+    <EditText
+        android:id="@+id/signETConfirmarContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/signBTNRegistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/SignRegistrar" />
+</LinearLayout>

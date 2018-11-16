@@ -1,4 +1,44 @@
 <resources>
     <string name="app_name">Gamino</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Strings de pantalla Sign_in -->
+    <string name="SignEmail">Correo Electrónico</string>
+    <string name="SignUsuario">Usuario</string>
+    <string name="SignContraseña">Contraseña</string>
+    <string name="SignConfirmarContraseña">Confirmar contraseña</string>
+    <string name="SignRegistrar">Crear usuario</string>
+    <string name="SignTitulo">Crear Usuario</string>
+
+
+    <!-- Strings de pantalla Log_in -->
+    <string name="LogUsuario">Usuario</string>
+    <string name="LogContraseña">Contraseña</string>
+    <string name="LogIngresar">Login</string>
+    <string name="LogRegistrar">Sign-in</string>
+
+    <!-- Strings de pantalla ConfigurarPerfil -->
+    <string name="ConfIntereses">Agregar intereses</string>
+    <string name="ConfCapturar">Capturar foto</string>
+    <string name="ConfCargar">Cargar foto</string>
+    <string name="ConfOmitir">Omitir</string>
+    <string name="ConfUsuario">Usuario</string>
+
+    <!-- Strings de pantalla Publicacion (ver) -->
+    <string name="PubTitulo">Como ser tanke!</string>
+    <string name="PubSubtitulo">Guía de aprendizaje de Reinhard</string>
+    <string name="PubCuerpo">Reinhard es un heroe de rol tanke, posee un gran escudo con el que puede bloquear ataques enemigos y proteger su equipo</string>
+    <string name="PubComentar">Comentar</string>
+
+    <!-- Strings de pantalla TablaComentarios-->
+    <string name="ComTitulo">Comentar</string>
+    <string name="ComPublicar">Publicar</string>
+
+    <!-- Strings de pantalla AltaPublicación-->
+    <string name="AltaPubTitulo">Titulo</string>
+    <string name="AltaPubSubtitulo">Subtitulo</string>
+    <string name="AltaPubCuerpo">Cuerpo</string>
+    <string name="AltaPubIntereses"></string>
+
+
 </resources>

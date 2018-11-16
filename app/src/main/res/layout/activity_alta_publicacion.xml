@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AltaPublicacion">
+
+    <TextView
+        android:id="@+id/altaPubTVTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AltaPubTitulo" />
+
+    <EditText
+        android:id="@+id/altaPubETTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/altaPubTVSubtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AltaPubSubtitulo" />
+
+    <EditText
+        android:id="@+id/altaPubETSubtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/altaPubTVCuerpo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AltaPubCuerpo" />
+
+    <EditText
+        android:id="@+id/altaPubETCuerpo"
+        android:layout_width="match_parent"
+        android:layout_height="143dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:scrollbarSize="?android:attr/autofillDatasetPickerMaxHeight" />
+
+    <TextView
+        android:id="@+id/altaPubTVInteres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AltaPubIntereses" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="41dp" />
+</LinearLayout>
