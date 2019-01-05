@@ -33,7 +33,9 @@ RadioGoup > rGr
 
 Ejemplo: 
 Componenete xml activity_alta_publicacion_sp_intereses
+
 Componente Java: sp_intereses
 
 Nomenclatura de mensajes de commit y merge:
+
 Titulo: [FuncionalidadTrabajada]: [Commit/Merge] [Estado]; [Fecha en dd/mm/aa]
