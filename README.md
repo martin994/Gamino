@@ -9,9 +9,9 @@ Objetos Java:[TipoDeComponenteAbreviado]_[AccionDeComponente]
 Nota: en el caso de usar un componente que no este entre las abreviaturas, agregarlo al README.
 
 Abreviaturas de componentes: 
-  Button > btn
-  TextView > tV
-  EditText > edt
+  Button > btn;
+  TextView > tV;
+  EditText > edt;
   Switch > sw
   ListView > lV
   Image > img
