@@ -38,4 +38,4 @@ Componente Java: sp_intereses
 
 Nomenclatura de mensajes de commit y merge:
 
-Titulo: [FuncionalidadTrabajada]: [Commit/Merge] [Estado]; [Fecha en dd/mm/aa]
+Titulo:  [FuncionalidadTrabajada]:  [Commit/Merge]  [Estado];  [Fecha en dd/mm/aa]
