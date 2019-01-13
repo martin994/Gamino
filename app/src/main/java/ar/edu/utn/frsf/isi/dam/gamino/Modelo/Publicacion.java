@@ -1,5 +1,9 @@
 package ar.edu.utn.frsf.isi.dam.gamino.Modelo;
 
+import android.graphics.Bitmap;
+import android.media.Image;
+import android.widget.ImageView;
+
 import java.util.ArrayList;
 
 public class Publicacion {
@@ -14,8 +18,18 @@ public class Publicacion {
     private ArrayList<Interes> listaInteresesPublicacion;
     private Double puntuacion;
     private ArrayList<Comentario> listaDeComentarios;
+    private Bitmap imagenPublicacion;//Verificar bien como traer FireBase las imagenes para saber como se setea
+
+    public Bitmap getImagenPublicacion() {
+        return imagenPublicacion;
+    }
+
+    public void setImagenPublicacion(Bitmap imagenPublicacion) {
+        this.imagenPublicacion = imagenPublicacion;
+    }
 
     public int getIdPublicacion() {
+
         return idPublicacion;
     }
 
