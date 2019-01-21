@@ -48,7 +48,7 @@ public class Log_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-
+        inicializarFirebase();
         edtCorreoElectronico=findViewById( R.id.loginETUsuario );
         edtContraseña=findViewById( R.id.loginETContraseña );
         btnSign=findViewById( R.id.loginBTNRegistrarse );
@@ -78,7 +78,7 @@ public class Log_in extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
                 if(firebaseAuth.getCurrentUser()!=null){
-                    Intent intent = new Intent(Log_in.this, ListaDeIntereses.class);
+                    Intent intent = new Intent(Log_in.this, CargarIntereses.class);
                     startActivity(intent);
                 }
 
@@ -94,6 +94,11 @@ public class Log_in extends AppCompatActivity {
                     Toast.makeText( Log_in.this, "No se pudo acceder a la cuenta verifique correo y contraseña", Toast.LENGTH_LONG ).show();
 
                 }
+                else {
+                    Intent intent1 = new Intent(Log_in.this, CargarIntereses.class);
+                    startActivity(intent1);
+                }
+
 
             }
         }

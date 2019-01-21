@@ -1,5 +1,6 @@
 package ar.edu.utn.frsf.isi.dam.gamino;
 
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,7 +38,8 @@ public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.
        viewHolderIntereses.tvNombreInteres.setText( listaIntereses.get( i ).getNombreInteres() );
        viewHolderIntereses.tvDescripcionInteres.setText( listaIntereses.get( i ).getDescripcionInteres() );
         //Verificar bien como traer FireBase las imagenes para saber como se setea
-       viewHolderIntereses.imgInteres.setImageBitmap( listaIntereses.get( i ).getIconoInteres() );
+       //viewHolderIntereses.imgInteres.setImageBitmap( listaIntereses.get( i ).getIconoInteres() );
+
 
     }
 
