@@ -78,7 +78,7 @@ public class Log_in extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
                 if(firebaseAuth.getCurrentUser()!=null){
-                    Intent intent = new Intent(Log_in.this, CargarIntereses.class);
+                    Intent intent = new Intent(Log_in.this, ListaDeIntereses.class);
                     startActivity(intent);
                 }
 

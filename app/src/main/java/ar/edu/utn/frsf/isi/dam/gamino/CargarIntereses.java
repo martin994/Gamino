@@ -71,6 +71,9 @@ public class CargarIntereses extends Activity {
 
                 cargarInteres( nuevoInteres, filePath );
 
+                Intent intent1 = new Intent(CargarIntereses.this,ListaDeIntereses.class);
+                startActivity(intent1);
+
             }
         } );
 
