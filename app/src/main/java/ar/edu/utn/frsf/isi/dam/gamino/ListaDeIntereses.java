@@ -26,7 +26,7 @@ public class ListaDeIntereses extends AppCompatActivity {
     private AdaptadorIntereses adaptadorIntereses;
     private DatabaseReference firebaseDatabase;
     private DatabaseReference firebaseDatabaseChild;
-    private Context mContex;
+
 
 
     @Override
@@ -70,6 +70,14 @@ public class ListaDeIntereses extends AppCompatActivity {
 
                 }
                 adaptadorIntereses= new AdaptadorIntereses( intereses, getApplicationContext());
+
+                adaptadorIntereses.setOnClickListener( new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                } );
+
                 recyclerViewIntereses.setAdapter( adaptadorIntereses );
 
 

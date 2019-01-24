@@ -1,13 +1,13 @@
 package ar.edu.utn.frsf.isi.dam.gamino.Modelo;
 
 import android.graphics.Bitmap;
-import android.media.Image;
+import android.net.Uri;
 
 public class Interes {
 
-    private int idInteres;
+    private String idInteres;
     private String nombreInteres;
-    private Bitmap IconoInteres;//Verificar bien como traer FireBase las imagenes para saber como se setea
+    private String IconoInteres;//Verificar bien como traer FireBase las imagenes para saber como se setea
     private String descripcionInteres;
 
     public Interes() {
@@ -27,11 +27,11 @@ public class Interes {
 
 
 
-    public int getIdInteres() {
+    public String getIdInteres() {
         return idInteres;
     }
 
-    public void setIdInteres(int idInteres) {
+    public void setIdInteres(String idInteres) {
         this.idInteres = idInteres;
     }
 
@@ -43,11 +43,11 @@ public class Interes {
         this.nombreInteres = nombreInteres;
     }
 
-    public Bitmap getIconoInteres() {
+    public String getIconoInteres() {
         return IconoInteres;
     }
 
-    public void setIconoInteres(Bitmap iconoInteres) {
+    public void setIconoInteres(String iconoInteres) {
         IconoInteres = iconoInteres;
     }
 }

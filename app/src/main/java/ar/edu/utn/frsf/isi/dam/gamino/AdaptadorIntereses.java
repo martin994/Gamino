@@ -23,11 +23,12 @@ import java.util.List;
 
 import ar.edu.utn.frsf.isi.dam.gamino.Modelo.Interes;
 
-public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.ViewHolderIntereses> {
+public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.ViewHolderIntereses> implements View.OnClickListener{
 
     private Context mContext;
 
     private List<Interes> listaIntereses;
+    private View.OnClickListener listener;
 
 
     public AdaptadorIntereses(List<Interes> listaIntereses, Context mContext) {
@@ -41,6 +42,7 @@ public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.
 
         View vista=LayoutInflater.from( viewGroup.getContext() ).inflate( R.layout.contenedor_interes,viewGroup,false);
 
+        vista.setOnClickListener( this );
         return new ViewHolderIntereses( vista );
     }
 
@@ -49,7 +51,7 @@ public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.
 
        viewHolderIntereses.tvNombreInteres.setText( listaIntereses.get( i ).getNombreInteres() );
        viewHolderIntereses.tvDescripcionInteres.setText( listaIntereses.get( i ).getDescripcionInteres() );
-        
+
         Glide.with(  mContext).load( listaIntereses.get( i ).getIconoInteres() ).addListener( new RequestListener<Drawable>() {
             @Override
             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
@@ -74,6 +76,22 @@ public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.
     @Override
     public int getItemCount() {
         return listaIntereses.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+
+        this.listener=listener;
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(listener!=null){
+
+            listener.onClick( v );
+        }
+
     }
 
     public static class ViewHolderIntereses extends RecyclerView.ViewHolder {

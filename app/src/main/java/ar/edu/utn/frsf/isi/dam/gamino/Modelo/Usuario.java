@@ -1,6 +1,7 @@
 package ar.edu.utn.frsf.isi.dam.gamino.Modelo;
 
 import android.media.Image;
+import android.net.Uri;
 
 import java.util.ArrayList;
 
@@ -10,7 +11,7 @@ public class Usuario {
    private String contrsenia;
    private Boolean recordarSecion;
    private String mailUsuario;
-   private Image fotoPerfilUsuario;
+   private Uri fotoPerfilUsuario;
    private ArrayList<Interes> listaInteres;
    private ArrayList<Publicacion> listaDePublicaciones;
    private ArrayList<Publicacion> listaDePublicacionesPuntuadas;
@@ -87,11 +88,11 @@ public class Usuario {
         this.mailUsuario = mailUsuario;
     }
 
-    public Image getFotoPerfilUsuario() {
+    public Uri getFotoPerfilUsuario() {
         return fotoPerfilUsuario;
     }
 
-    public void setFotoPerfilUsuario(Image fotoPerfilUsuario) {
+    public void setFotoPerfilUsuario(Uri fotoPerfilUsuario) {
         this.fotoPerfilUsuario = fotoPerfilUsuario;
     }
 }
