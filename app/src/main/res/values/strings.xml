@@ -40,5 +40,18 @@
     <string name="AltaPubCuerpo">Cuerpo</string>
     <string name="AltaPubIntereses">Intereses</string>
 
+    <!-- Strings de pantalla Intereses-->
+    <string name="ListaIntereses">Lista de Intereses</string>
+    <string name="InteresesConfirmar">Confirmar</string>
+    <string name="InteresesOmitir">Omitir</string>
+
+    <!-- Strings Contenedor De Intereses-->
+    <string name="ContenedorNombreIntereses"> Nombre Interes</string>
+    <string name="ContenedorDescripcionIntereses"> Descripcion Interes</string>
+    <!-- Strings MainActivity-->
+
+    <string name="MainActivitySigIn"> Agregar Usuario</string>
+    <string name="MainActivityLogIn"> Acceder a Cuenta </string>
+    <string name="title_activity_cargar_intereses">CargarIntereses</string>
 
 </resources>

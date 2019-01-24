@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1018045366669",
+    "firebase_url": "https://gamino-b0604.firebaseio.com",
+    "project_id": "gamino-b0604",
+    "storage_bucket": "gamino-b0604.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018045366669:android:2d59ec236345fff7",
+        "android_client_info": {
+          "package_name": "ar.edu.utn.frsf.isi.dam.gamino"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018045366669-il3nolajie62jr4q51r29eotf4en2uvm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ar.edu.utn.frsf.isi.dam.gamino",
+            "certificate_hash": "dd49165a9d6c0c598b62f408ecefe585d9338e59"
+          }
+        },
+        {
+          "client_id": "1018045366669-gt0u33dvsutmpepn4r0bh68h0a3bq4uf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDERCvANOeTh3ickb38BFM65Gyu6E4Rs58"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018045366669-gt0u33dvsutmpepn4r0bh68h0a3bq4uf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
