@@ -37,7 +37,7 @@ public class AdaptadorPublicacion extends RecyclerView.Adapter<AdaptadorPublicac
             viewHolderPublicacion.autorPublicacion.setText(  publicacionLista.get( i ).getEditor().getNombreusuario());
             viewHolderPublicacion.cuerpoPublicacion.setText( publicacionLista.get( i ).getCuerpoPublicacion() );
             //Verificar bien como traer FireBase las imagenes para saber como se setea
-            viewHolderPublicacion.imagenDeLaPubliacion.setImageBitmap( publicacionLista.get( i ).getImagenPublicacion());
+            //viewHolderPublicacion.imagenDeLaPubliacion.setImageBitmap( publicacionLista.get( i ).getImagenPublicacion());
 
     }
 

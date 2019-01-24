@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ar.edu.utn.frsf.isi.dam.gamino">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -69,7 +72,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListaDeIntereses" />
-        <activity android:name=".ListaDePublicacion"></activity>
+        <activity android:name=".ListaDePublicacion" />
+        <activity
+            android:name=".CargarIntereses"
+            android:label="@string/title_activity_cargar_intereses"></activity>
     </application>
 
 </manifest>
