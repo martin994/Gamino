@@ -48,6 +48,7 @@ public class ListaDeIntereses extends AppCompatActivity {
 
     public void cargarAdaptador(){
 
+
         firebaseDatabaseChild.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -69,6 +70,8 @@ public class ListaDeIntereses extends AppCompatActivity {
 
 
                 }
+
+
                 adaptadorIntereses= new AdaptadorIntereses( intereses, getApplicationContext());
 
                 adaptadorIntereses.setOnClickListener( new View.OnClickListener() {
