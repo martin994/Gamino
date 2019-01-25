@@ -71,7 +71,7 @@ public class Sign_in extends AppCompatActivity {
         edtContrasenia=findViewById( R.id.signETContraseña );
         edtConfirmacionContrasenia=findViewById( R.id.signETConfirmarContraseña );
         btnCrearUsuario=findViewById( R.id.signBTNRegistrar);
-
+        inicializarFirebase();
 
 
 
@@ -83,7 +83,7 @@ public class Sign_in extends AppCompatActivity {
                 contrasenia=edtContrasenia.getText().toString();
                 nombreUsuario=edtNombreUsuario.getText().toString();
                 confirmacionContrasenia=edtConfirmacionContrasenia.getText().toString();
-                inicializarFirebase();
+
 
                 if(TextUtils.isEmpty( correoElectonico )){
                     Toast.makeText( getApplicationContext(),"Campo correo electronico vacio",Toast.LENGTH_LONG ).show();
@@ -155,7 +155,7 @@ public class Sign_in extends AppCompatActivity {
                     nuevoUsuario.setNombreusuario( nombreUsuario );
                     nuevoUsuario.setListaInteres( new ArrayList<Interes>(  ) );
                     nuevoUsuario.setListaDePublicaciones( new ArrayList<Publicacion>(  ) );
-                    nuevoUsuario.setListaDePublicacionesPuntuadas( new ArrayList<Publicacion>(  ) );
+                    nuevoUsuario.setListaDePublicacionesPuntuadas( new ArrayList<Publicacion>(  ) );//sacar las listas
                     myRefDatabase.child( "Usuarios" ).child( nuevoUsuario.getIdUsuario() ).setValue( nuevoUsuario );
                     firebaseAuth.signInWithEmailAndPassword(email, email);
                     dialog.dismiss();
