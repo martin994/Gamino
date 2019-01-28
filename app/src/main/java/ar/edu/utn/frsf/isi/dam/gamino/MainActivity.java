@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         btnLogIn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText( getApplicationContext(),"Todavia no esta hecha",Toast.LENGTH_LONG ).show();
+                Intent i2 = new Intent( MainActivity.this,Log_in.class );
+                startActivity( i2 );
             }
         } );
 
