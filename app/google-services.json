@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "1018045366669-8i8iu66u49pck8prsj1l12gs7rnk0t7c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ar.edu.utn.frsf.isi.dam.gamino",
+            "certificate_hash": "2ff496bddd60f3193dace48a2ab212dc8124efc3"
+          }
+        },
+        {
           "client_id": "1018045366669-gt0u33dvsutmpepn4r0bh68h0a3bq4uf.apps.googleusercontent.com",
           "client_type": 3
         }

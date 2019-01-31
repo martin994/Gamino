@@ -39,6 +39,9 @@
     <string name="AltaPubSubtitulo">Subtitulo</string>
     <string name="AltaPubCuerpo">Cuerpo</string>
     <string name="AltaPubIntereses">Intereses</string>
+    <string name="AltaPubAlta">Publicar</string>
+    <string name="AltaPubVolver">Volver</string>
+
 
     <!-- Strings de pantalla Intereses-->
     <string name="ListaIntereses">Lista de Intereses</string>
