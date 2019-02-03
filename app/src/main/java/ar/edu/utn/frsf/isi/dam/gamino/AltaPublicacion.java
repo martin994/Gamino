@@ -47,7 +47,7 @@ public class AltaPublicacion extends AppCompatActivity {
     private StorageReference mStorageReference;
     private ArrayAdapter<String> adaptadorIntereses;
     private List<Interes> intereses;
-
+    private Publicacion p;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +76,7 @@ public class AltaPublicacion extends AppCompatActivity {
                 } else if (sp_intereses.getSelectedItem() == null) {
                     Toast.makeText(AltaPublicacion.this, "La publicación debe tener una categoría", Toast.LENGTH_SHORT).show();
                 } else {
-                    Publicacion p = new Publicacion();
+                    p = new Publicacion();
                     p.setIdPublicacion(UUID.randomUUID().toString());
                     p.setTituloPublicacion(edt_titulo.getText().toString());
                     p.setSubtituloPublicacion(edt_subtitulo.getText().toString());
@@ -90,7 +90,8 @@ public class AltaPublicacion extends AppCompatActivity {
 
                     }
                     cargarPublicacion(p);
-                    Intent i = new Intent(AltaPublicacion.this, ConfigurarPerfil.class);
+                    Intent i = new Intent(AltaPublicacion.this, VerPublicacion.class);
+                    i.putExtra("Publicacion", p.getIdPublicacion());
                     startActivity(i);
                 }
 
@@ -100,7 +101,8 @@ public class AltaPublicacion extends AppCompatActivity {
         btn_volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AltaPublicacion.this, ConfigurarPerfil.class);
+                Intent i = new Intent(AltaPublicacion.this, VerPublicacion.class);
+                i.putExtra("Publicacion", p.getIdPublicacion());
                 startActivity(i);
             }
         });

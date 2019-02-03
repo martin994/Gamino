@@ -106,7 +106,7 @@ public class ConfigurarPerfil extends AppCompatActivity {
 
 
 
-        btn_Capturar_Foto.setOnClickListener(new View.OnClickListener() {
+        /*btn_Capturar_Foto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -122,7 +122,7 @@ public class ConfigurarPerfil extends AppCompatActivity {
                 }
             }
 
-        });
+        });*/
         btn_Cargar_Foto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -289,7 +289,7 @@ public class ConfigurarPerfil extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String ruta= dataSnapshot.getValue(String.class);
 
-                if(Uri.parse(ruta)!=null){
+                if(ruta!=null){
                     Glide.with(getApplicationContext()).load(Uri.parse(ruta)).addListener( new RequestListener<Drawable>() {
 
                         @Override

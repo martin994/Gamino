@@ -9,8 +9,6 @@ import java.util.ArrayList;
 
 public class Publicacion {
 
-    public Publicacion() {
-    }
 
     private String idPublicacion;
     private Usuario editor;
@@ -22,6 +20,14 @@ public class Publicacion {
     private ArrayList<Comentario> listaDeComentarios;
     private Uri imagenPublicacion;//Verificar bien como traer FireBase las imagenes para saber como se setea
 
+    public Publicacion(){
+        listaDeComentarios = new ArrayList<Comentario>();
+
+    }
+
+    public void addComentario(Comentario c){
+        listaDeComentarios.add(c);
+    }
 
 
     public String getSubtituloPublicacion() {

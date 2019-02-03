@@ -29,10 +29,12 @@
     <string name="PubSubtitulo">Guía de aprendizaje de Reinhard</string>
     <string name="PubCuerpo">Reinhard es un heroe de rol tanke, posee un gran escudo con el que puede bloquear ataques enemigos y proteger su equipo</string>
     <string name="PubComentar">Comentar</string>
+    <string name="PubVolver">Volver</string>
 
     <!-- Strings de pantalla TablaComentarios-->
     <string name="ComTitulo">Comentar</string>
     <string name="ComPublicar">Publicar</string>
+    <string name="ComVolver">Volver</string>
 
     <!-- Strings de pantalla AltaPublicación-->
     <string name="AltaPubTitulo">Titulo</string>

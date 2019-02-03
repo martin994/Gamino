@@ -10,18 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"-->
     <ListView
-        android:id="@+id/comentarioLVComentarios"
+        android:id="@+id/tabla_comentarios_lV_comentarios"
         android:layout_width="match_parent"
         android:layout_height="262dp" />
 
     <TextView
-        android:id="@+id/comentarioTVComentar"
+        android:id="@+id/tabla_comentarios_tV_comentar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/ComTitulo" />
 
     <EditText
-        android:id="@+id/comentarioETCuerpo"
+        android:id="@+id/tabla_comentarios_edt_comentar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:ems="10"
@@ -29,9 +29,15 @@
         android:text="Name" />
 
     <Button
-        android:id="@+id/comentarioBTNComentar"
+        android:id="@+id/tabla_comentarios_btn_comentar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/ComPublicar" />
+
+    <Button
+        android:id="@+id/tabla_comentarios_btn_volver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ComVolver" />
     <!--/ScrollView-->
 </LinearLayout>
