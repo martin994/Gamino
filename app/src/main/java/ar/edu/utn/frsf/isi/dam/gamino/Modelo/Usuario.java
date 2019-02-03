@@ -16,6 +16,19 @@ public class Usuario {
    private ArrayList<Publicacion> listaDePublicaciones;
    private ArrayList<Publicacion> listaDePublicacionesPuntuadas;
 
+    public String getIdMensajeUsuario() {
+        return idMensajeUsuario;
+    }
+
+    public void setIdMensajeUsuario(String idMensajeUsuario) {
+        this.idMensajeUsuario = idMensajeUsuario;
+    }
+
+    private String idMensajeUsuario;
+
+
+
+
 
     public ArrayList<Publicacion> getListaDePublicaciones() {
         return listaDePublicaciones;
