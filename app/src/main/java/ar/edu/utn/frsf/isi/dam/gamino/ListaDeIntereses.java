@@ -1,12 +1,12 @@
 package ar.edu.utn.frsf.isi.dam.gamino;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import ar.edu.utn.frsf.isi.dam.gamino.Modelo.Interes;
@@ -31,6 +30,8 @@ public class ListaDeIntereses extends AppCompatActivity {
     private DatabaseReference firebaseDatabaseUsuario;
     private DatabaseReference firebaseDatabaseChild;
 
+    private Button btnConfirmarIntereses;
+
 
 
     @Override
@@ -43,9 +44,22 @@ public class ListaDeIntereses extends AppCompatActivity {
         firebaseDatabaseUsuario=firebaseDatabase.child( "Usuarios" );
         firebaseDatabaseChild=firebaseDatabase.child( "Intereses" );
         recyclerViewIntereses=(RecyclerView) findViewById( R.id.InteresesRV);
+        btnConfirmarIntereses=(Button)findViewById( R.id.InteresesBtnConfirmar );
         recyclerViewIntereses.setLayoutManager( new LinearLayoutManager( this ) );
         firebaseAuth=FirebaseAuth.getInstance();
         cargarAdaptador();
+
+
+
+        btnConfirmarIntereses.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+            }
+        } );
+
 
 
     }
@@ -85,6 +99,11 @@ public class ListaDeIntereses extends AppCompatActivity {
                     public void onClick(View v) {
 
                         int i = recyclerViewIntereses.getChildAdapterPosition( v );
+                        intereses.get( i ).getNombreInteres();
+
+
+
+
 
 
 
@@ -116,6 +135,9 @@ public class ListaDeIntereses extends AppCompatActivity {
         recyclerViewIntereses.setAdapter( adaptadorIntereses );
 
     }
+
+
+
 
 
 }

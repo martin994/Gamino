@@ -53,5 +53,8 @@
     <string name="MainActivitySigIn"> Agregar Usuario</string>
     <string name="MainActivityLogIn"> Acceder a Cuenta </string>
     <string name="title_activity_cargar_intereses">CargarIntereses</string>
+    <!-- Strings MyFirebaseMessagingService-->
+    <string name="default_notification_channel_id">default_channel</string>
+
 
 </resources>
