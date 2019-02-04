@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CargarIntereses">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/cargarInteresImV"
+            android:layout_width="395dp"
+            android:layout_height="174dp"
+            android:layout_weight="1"
+            tools:src="@tools:sample/avatars" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/cargarInteresEDTNombre"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/cargarInteresEDTDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/cargarInteresBTNImagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargar Imagen" />
+
+    <Button
+        android:id="@+id/cargarInteresBTNCargar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargar Interes" />
+
+</LinearLayout>
