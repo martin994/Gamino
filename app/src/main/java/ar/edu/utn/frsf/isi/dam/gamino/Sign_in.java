@@ -88,7 +88,9 @@ public class Sign_in extends AppCompatActivity {
                 contrasenia=edtContrasenia.getText().toString();
                 nombreUsuario=edtNombreUsuario.getText().toString();
                 confirmacionContrasenia=edtConfirmacionContrasenia.getText().toString();
+
                 token=FirebaseInstanceId.getInstance().getToken();
+
 
                 if(TextUtils.isEmpty( correoElectonico )){
                     Toast.makeText( getApplicationContext(),"Campo correo electronico vacio",Toast.LENGTH_LONG ).show();
