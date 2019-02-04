@@ -9,17 +9,34 @@ import java.util.ArrayList;
 
 public class Publicacion {
 
-    public Publicacion() {
-    }
 
-    private int idPublicacion;
+    private String idPublicacion;
     private Usuario editor;
     private String tituloPublicacion;
+    private String subtituloPublicacion;
     private String cuerpoPublicacion;
-    private ArrayList<Interes> listaInteresesPublicacion;
+    private String idInteres;
     private Double puntuacion;
     private ArrayList<Comentario> listaDeComentarios;
     private Uri imagenPublicacion;//Verificar bien como traer FireBase las imagenes para saber como se setea
+
+    public Publicacion(){
+        listaDeComentarios = new ArrayList<Comentario>();
+
+    }
+
+    public void addComentario(Comentario c){
+        listaDeComentarios.add(c);
+    }
+
+
+    public String getSubtituloPublicacion() {
+        return subtituloPublicacion;
+    }
+
+    public void setSubtituloPublicacion(String subtituloPublicacion) {
+        this.subtituloPublicacion = subtituloPublicacion;
+    }
 
     public Uri getImagenPublicacion() {
         return imagenPublicacion;
@@ -29,12 +46,12 @@ public class Publicacion {
         this.imagenPublicacion = imagenPublicacion;
     }
 
-    public int getIdPublicacion() {
+    public String getIdPublicacion() {
 
         return idPublicacion;
     }
 
-    public void setIdPublicacion(int idPublicacion) {
+    public void setIdPublicacion(String idPublicacion) {
         this.idPublicacion = idPublicacion;
     }
 
@@ -62,12 +79,12 @@ public class Publicacion {
         this.cuerpoPublicacion = cuerpoPublicacion;
     }
 
-    public ArrayList<Interes> getListaInteresesPublicacion() {
-        return listaInteresesPublicacion;
+    public String getidInteres() {
+        return idInteres;
     }
 
-    public void setListaInteresesPublicacion(ArrayList<Interes> listaInteresesPublicacion) {
-        this.listaInteresesPublicacion = listaInteresesPublicacion;
+    public void setidInteres(String idInteres) {
+        this.idInteres = idInteres;
     }
 
     public Double getPuntuacion() {

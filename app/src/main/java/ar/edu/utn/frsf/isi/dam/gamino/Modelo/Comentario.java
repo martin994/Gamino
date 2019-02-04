@@ -3,19 +3,30 @@ package ar.edu.utn.frsf.isi.dam.gamino.Modelo;
 import java.util.Date;
 
 public class Comentario {
-    int idComentario;
-    String cuerpoComentario;
-    Usuario usuario;
-    Date fechaComentario;
+    private String idComentario;
+    private String cuerpoComentario;
+    private String usuario;
+    private String idEditor;
+
+    private Date fechaComentario;
+
+
+    public String getIdEditor() {
+        return idEditor;
+    }
+
+    public void setIdEditor(String idEditor) {
+        this.idEditor = idEditor;
+    }
 
     public Comentario() {
     }
 
-    public int getIdComentario() {
+    public String getIdComentario() {
         return idComentario;
     }
 
-    public void setIdComentario(int idComentario) {
+    public void setIdComentario(String idComentario) {
         this.idComentario = idComentario;
     }
 
@@ -27,11 +38,11 @@ public class Comentario {
         this.cuerpoComentario = cuerpoComentario;
     }
 
-    public Usuario getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 
