@@ -46,7 +46,7 @@ public class TablaComentarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //inicializacion de variables
         setContentView(R.layout.activity_tabla_comentarios);
-        Bundle extras = getIntent().getExtras();
+        final Bundle extras = getIntent().getExtras();
         lV_comentarios= (ListView) findViewById(R.id.tabla_comentarios_lV_comentarios);
         edt_comentar = (EditText) findViewById(R.id.tabla_comentarios_edt_comentar);
         btn_comentar = (Button) findViewById(R.id.tabla_comentarios_btn_comentar);
@@ -60,6 +60,7 @@ public class TablaComentarios extends AppCompatActivity {
         firebaseDatabaseUsuario = firebaseDatabaseUsuario.child("Usuarios");
         publicacion = new Publicacion();
         publicacion.setIdPublicacion(idPublicacion);
+
         //cargado de tabla de comentarios
         cargarListView(publicacion.getIdPublicacion());
 
@@ -69,10 +70,12 @@ public class TablaComentarios extends AppCompatActivity {
                 //Se genera el comentario con el usuario loggueado
                 FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
                 Comentario nuevo = new Comentario();
+                nuevo.setIdEditor(extras.getString("idEditor"));
                 nuevo.setCuerpoComentario(edt_comentar.getText().toString());
                 nuevo.setIdComentario(UUID.randomUUID().toString());
                 nuevo.setFechaComentario(new Date());
                 nuevo.setUsuario(mUser.getUid());
+
                 firebaseDatabasePublicar.child("Publicaciones").child(publicacion.getIdPublicacion()).child("Comentarios").child(nuevo.getIdComentario()).setValue(nuevo);
 
                 cargarListView(publicacion.getIdPublicacion());

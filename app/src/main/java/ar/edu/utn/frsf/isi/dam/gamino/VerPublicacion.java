@@ -25,7 +25,7 @@ public class VerPublicacion extends AppCompatActivity {
     private Button btn_comentar;
     private DatabaseReference firebaseDatabase;
     private Button btn_volver;
-
+    private Publicacion p;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Declaraciones
@@ -45,7 +45,7 @@ public class VerPublicacion extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                Publicacion p = dataSnapshot.getValue(Publicacion.class);
+                 p = dataSnapshot.getValue(Publicacion.class);
                 tV_titulo.setText(p.getTituloPublicacion());
                 tV_subtitulo.setText(p.getSubtituloPublicacion());
                 tV_cuerpo.setText(p.getCuerpoPublicacion());
@@ -62,7 +62,9 @@ public class VerPublicacion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(VerPublicacion.this, TablaComentarios.class);
+
                 i.putExtra("Publicacion",idPublicacion);
+                i.putExtra("idEditor",p.getEditor().getIdUsuario());
                 startActivity(i);
             }
         });

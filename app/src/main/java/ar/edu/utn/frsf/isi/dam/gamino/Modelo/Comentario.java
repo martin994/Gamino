@@ -6,11 +6,18 @@ public class Comentario {
     private String idComentario;
     private String cuerpoComentario;
     private String usuario;
+    private String idEditor;
 
     private Date fechaComentario;
 
 
+    public String getIdEditor() {
+        return idEditor;
+    }
 
+    public void setIdEditor(String idEditor) {
+        this.idEditor = idEditor;
+    }
 
     public Comentario() {
     }
