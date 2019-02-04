@@ -2,7 +2,6 @@ package ar.edu.utn.frsf.isi.dam.gamino;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -23,12 +22,14 @@ import java.util.List;
 
 import ar.edu.utn.frsf.isi.dam.gamino.Modelo.Interes;
 
-public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.ViewHolderIntereses> implements View.OnClickListener{
+public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.ViewHolderIntereses>
+        implements View.OnClickListener{
 
     private Context mContext;
 
     private List<Interes> listaIntereses;
     private View.OnClickListener listener;
+
 
 
     public AdaptadorIntereses(List<Interes> listaIntereses, Context mContext) {
@@ -84,6 +85,7 @@ public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.
 
     }
 
+
     @Override
     public void onClick(View v) {
 
@@ -93,6 +95,8 @@ public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.
         }
 
     }
+
+
 
     public static class ViewHolderIntereses extends RecyclerView.ViewHolder {
 
@@ -107,7 +111,10 @@ public class AdaptadorIntereses extends RecyclerView.Adapter<AdaptadorIntereses.
             tvDescripcionInteres=(TextView)itemView.findViewById( R.id.contenedorInteresTVDescripcion );
             imgInteres=(ImageView)itemView.findViewById( R.id.contenedorInteresesImg);
             progressBar= itemView.findViewById( R.id.contenedorInteresProgress );
+
+
         }
+
 
     }
 }
