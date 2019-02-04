@@ -14,7 +14,7 @@
         android:text="@string/AltaPubTitulo" />
 
     <EditText
-        android:id="@+id/altaPubETTitulo"
+        android:id="@+id/alta_publicacion_edt_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -27,7 +27,7 @@
         android:text="@string/AltaPubSubtitulo" />
 
     <EditText
-        android:id="@+id/altaPubETSubtitulo"
+        android:id="@+id/alta_publicacion_edt_subtitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -40,12 +40,11 @@
         android:text="@string/AltaPubCuerpo" />
 
     <EditText
-        android:id="@+id/altaPubETCuerpo"
+        android:id="@+id/alta_publicacion_edt_cuerpo"
         android:layout_width="match_parent"
         android:layout_height="143dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/altaPubTVInteres"
@@ -54,7 +53,19 @@
         android:text="@string/AltaPubIntereses" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/alta_publicacion_sp_intereses"
         android:layout_width="match_parent"
         android:layout_height="41dp" />
+
+    <Button
+        android:id="@+id/alta_publicacion_btn_alta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AltaPubAlta" />
+
+    <Button
+        android:id="@+id/alta_publicacion_btn_volver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AltaPubVolver" />
 </LinearLayout>

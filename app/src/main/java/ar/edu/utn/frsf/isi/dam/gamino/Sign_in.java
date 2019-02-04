@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
@@ -23,6 +25,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import java.util.ArrayList;
 
@@ -38,6 +42,7 @@ public class Sign_in extends AppCompatActivity {
     private String nombreUsuario;//todavia no lo uso
     private String contrasenia;
     private String confirmacionContrasenia;
+    private String token;
 
     private EditText edtCorreoElectonico;
     private EditText edtNombreUsuario;
@@ -71,7 +76,7 @@ public class Sign_in extends AppCompatActivity {
         edtContrasenia=findViewById( R.id.signETContraseña );
         edtConfirmacionContrasenia=findViewById( R.id.signETConfirmarContraseña );
         btnCrearUsuario=findViewById( R.id.signBTNRegistrar);
-
+        inicializarFirebase();
 
 
 
@@ -83,7 +88,9 @@ public class Sign_in extends AppCompatActivity {
                 contrasenia=edtContrasenia.getText().toString();
                 nombreUsuario=edtNombreUsuario.getText().toString();
                 confirmacionContrasenia=edtConfirmacionContrasenia.getText().toString();
-                inicializarFirebase();
+
+                token=FirebaseInstanceId.getInstance().getToken();
+
 
                 if(TextUtils.isEmpty( correoElectonico )){
                     Toast.makeText( getApplicationContext(),"Campo correo electronico vacio",Toast.LENGTH_LONG ).show();
@@ -110,7 +117,7 @@ public class Sign_in extends AppCompatActivity {
                 if (contrasenia.equals( confirmacionContrasenia )) {
 
 
-                    registrarUsuario( correoElectonico, contrasenia, nombreUsuario );
+                    registrarUsuario( correoElectonico, contrasenia, nombreUsuario, token );
 
 
                 }
@@ -136,7 +143,7 @@ public class Sign_in extends AppCompatActivity {
 
     }
 
-    private void registrarUsuario(final String email, final String contrasenia, final String nombreUsuario){
+    private void registrarUsuario(final String email, final String contrasenia, final String nombreUsuario, final String token){
 
         final ProgressDialog dialog= new ProgressDialog( this );
 
@@ -153,9 +160,7 @@ public class Sign_in extends AppCompatActivity {
                     nuevoUsuario.setMailUsuario( email );
                     nuevoUsuario.setContrsenia( contrasenia );
                     nuevoUsuario.setNombreusuario( nombreUsuario );
-                    nuevoUsuario.setListaInteres( new ArrayList<Interes>(  ) );
-                    nuevoUsuario.setListaDePublicaciones( new ArrayList<Publicacion>(  ) );
-                    nuevoUsuario.setListaDePublicacionesPuntuadas( new ArrayList<Publicacion>(  ) );
+                    nuevoUsuario.setIdMensajeUsuario( token );
                     myRefDatabase.child( "Usuarios" ).child( nuevoUsuario.getIdUsuario() ).setValue( nuevoUsuario );
                     firebaseAuth.signInWithEmailAndPassword(email, email);
                     dialog.dismiss();

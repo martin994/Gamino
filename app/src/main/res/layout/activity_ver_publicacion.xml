@@ -8,7 +8,7 @@
     tools:context=".VerPublicacion">
 
     <TextView
-        android:id="@+id/publicacionTVTitulo"
+        android:id="@+id/ver_publicacion_tV_titulo"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:text="@string/PubTitulo"
@@ -16,7 +16,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/publicacionTVSubtitulo"
+        android:id="@+id/ver_publicacion_tV_subtitulo"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:text="@string/PubSubtitulo"
@@ -24,7 +24,7 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/publicacionTVCuerpo"
+        android:id="@+id/ver_publicacion_tV_cuerpo"
         android:layout_width="match_parent"
         android:layout_height="244dp"
         android:text="@string/PubCuerpo"
@@ -32,8 +32,14 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/publicacionBTNComentar"
+        android:id="@+id/ver_publicacion_btn_comentar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/PubComentar" />
+
+    <Button
+        android:id="@+id/ver_publicacion_btn_volver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/PubVolver" />
 </LinearLayout>

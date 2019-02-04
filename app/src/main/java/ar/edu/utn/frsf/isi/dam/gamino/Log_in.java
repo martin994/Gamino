@@ -86,8 +86,8 @@ public class Log_in extends AppCompatActivity {
         };
     }
 
-    private void ingresoUsuario(String correoUsuario, String emailUsuario){
-        firebaseAuth.signInWithEmailAndPassword( correoUsuario, emailUsuario ).addOnCompleteListener( this, new OnCompleteListener<AuthResult>() {
+    private void ingresoUsuario(String correoUsuario, String passUsuario){
+        firebaseAuth.signInWithEmailAndPassword( correoUsuario, passUsuario ).addOnCompleteListener( this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(!task.isSuccessful()){
