@@ -7,9 +7,17 @@ public class Comentario {
     private String cuerpoComentario;
     private String usuario;
     private String idEditor;
-
     private Date fechaComentario;
+    private String tokenComentario;
 
+
+    public String getTokenComentario() {
+        return tokenComentario;
+    }
+
+    public void setTokenComentario(String tokenComentario) {
+        this.tokenComentario = tokenComentario;
+    }
 
     public String getIdEditor() {
         return idEditor;
