@@ -40,6 +40,8 @@ public class TablaComentarios extends AppCompatActivity {
     private Button btn_comentar;
     private Publicacion publicacion;
     private Button btn_volver;
+    private String tokenMensaje;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +64,7 @@ public class TablaComentarios extends AppCompatActivity {
         publicacion.setIdPublicacion(idPublicacion);
 
         //cargado de tabla de comentarios
-        cargarListView(publicacion.getIdPublicacion());
+        cargarListView(publicacion.getIdPublicacion(),extras.getString( "idEditor" ));
 
         btn_comentar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,10 +77,11 @@ public class TablaComentarios extends AppCompatActivity {
                 nuevo.setIdComentario(UUID.randomUUID().toString());
                 nuevo.setFechaComentario(new Date());
                 nuevo.setUsuario(mUser.getUid());
-
+                nuevo.setTokenComentario( tokenMensaje );
+                firebaseDatabase.child( "Comentarios" ).child( nuevo.getIdComentario() ).setValue( nuevo );
                 firebaseDatabasePublicar.child("Publicaciones").child(publicacion.getIdPublicacion()).child("Comentarios").child(nuevo.getIdComentario()).setValue(nuevo);
 
-                cargarListView(publicacion.getIdPublicacion());
+                cargarListView(publicacion.getIdPublicacion(),extras.getString( "idEditor" ));
             }
         });
         btn_volver.setOnClickListener(new View.OnClickListener() {
@@ -93,14 +96,14 @@ public class TablaComentarios extends AppCompatActivity {
 
     }
 
-    private void cargarListView(final String idPublicacion){
+    private void cargarListView(final String idPublicacion, final String idEditor){
         firebaseDatabase.addValueEventListener(new ValueEventListener() {
             //se verifica cada comentario y se busca el nombre de su respectivo usuario
             //NOTA actualmente no ordena por fecha,falta agregar
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
                 final ArrayList<String> comentario = new ArrayList<String>();
-
+                tokenMensaje =  dataSnapshot.child( "Usuarios" ).child( idEditor ).child( "idMensajeUsuario").getValue(String.class);
                 for (DataSnapshot snapshot : dataSnapshot.child("Publicaciones").child(publicacion.getIdPublicacion()).child("Comentarios").getChildren()) {
 
 
