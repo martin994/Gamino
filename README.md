@@ -39,3 +39,17 @@ Componente Java: sp_intereses
 Nomenclatura de mensajes de commit y merge:
 
 Titulo:  [FuncionalidadTrabajada]:  [Commit/Merge]  [Estado];  [Fecha en dd/mm/aa]
+
+
+Dependencias para firebas
+
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-auth:16.0.4'
+
+
+    implementation 'com.google.firebase:firebase-database:16.0.5'
+    implementation 'com.google.firebase:firebase-storage:16.0.3'
+    implementation 'com.google.firebase:firebase-auth:16.0.3'
+
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
