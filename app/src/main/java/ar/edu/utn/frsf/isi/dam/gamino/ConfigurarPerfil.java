@@ -133,7 +133,14 @@ public class ConfigurarPerfil extends AppCompatActivity {
         btn_Omitir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(ConfigurarPerfil.this, AltaPublicacion.class);
+                Intent i=new Intent(ConfigurarPerfil.this, ListaDePublicacion.class);
+                startActivity(i);
+            }
+        });
+        btn_Intereses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ConfigurarPerfil.this, ListaDeIntereses.class);
                 startActivity(i);
             }
         });
