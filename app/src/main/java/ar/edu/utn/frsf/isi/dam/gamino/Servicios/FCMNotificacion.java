@@ -20,6 +20,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import ar.edu.utn.frsf.isi.dam.gamino.ConfigurarPerfil;
 import ar.edu.utn.frsf.isi.dam.gamino.MainActivity;
 import ar.edu.utn.frsf.isi.dam.gamino.R;
+import ar.edu.utn.frsf.isi.dam.gamino.VerPublicacion;
 
 import static android.graphics.Color.rgb;
 
@@ -38,8 +39,11 @@ public class FCMNotificacion extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived( remoteMessage );
 
-        Intent intent = new Intent(this, MainActivity.class);
+        String idDePulicacion= remoteMessage.getData().get( "idP" );
+
+        Intent intent = new Intent(this, VerPublicacion.class).putExtra( "Publicacion",idDePulicacion );
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 
