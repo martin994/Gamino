@@ -5,6 +5,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -27,6 +28,9 @@ import static android.graphics.Color.rgb;
 public class FCMNotificacion extends FirebaseMessagingService {
 
 
+    private String titulo;
+    private String cuerpo;
+    BroadcastReceiver receptor= new MensajesReceiver();
     public FCMNotificacion() {
     }
 
@@ -39,44 +43,25 @@ public class FCMNotificacion extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived( remoteMessage );
 
-        String idDePulicacion= remoteMessage.getData().get( "idP" );
+        if (remoteMessage.getData()!=null){
+            String idDePulicacion= remoteMessage.getData().get( "idP" );
+            titulo=remoteMessage.getNotification().getTitle();
+            cuerpo=remoteMessage.getNotification().getBody();
 
-        Intent intent = new Intent(this, VerPublicacion.class).putExtra( "Publicacion",idDePulicacion );
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
-                PendingIntent.FLAG_ONE_SHOT);
-
-        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        NotificationManager notificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        Notification.Builder notificationBuilder =
-                new Notification.Builder(this);
-        notificationBuilder
-                .setSmallIcon(R.drawable.logoaplicacion)
-                .setColor(rgb(255,160,0))
-                .setContentTitle(remoteMessage.getNotification().getTitle())
-                .setContentText(remoteMessage.getNotification().getBody())
-                .setAutoCancel(true)
-                .setVibrate(new long[]{0, 1000, 500, 1000})
-                .setSound(defaultSoundUri)
-                .setContentIntent(pendingIntent)
-                .setContentInfo("info");
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            NotificationChannel notificationChannel = new NotificationChannel("id",
-                    "Notification",
-                    NotificationManager.IMPORTANCE_DEFAULT);
-            if(notificationManager!=null){
-                notificationManager.createNotificationChannel(notificationChannel );
-            }
-
-            notificationBuilder.setChannelId( "id" );
-        }
-        if(notificationManager!=null) {
-            notificationManager.notify( "id",0, notificationBuilder.build());
+            enviarNotificacionComentario( idDePulicacion,titulo,cuerpo );
 
         }
+
+    }
+
+    private void enviarNotificacionComentario(String idPublicacion, String titulo, String cuerpo){
+
+        Intent intent = new Intent(this, VerPublicacion.class);
+
+        intent.putExtra( "Publicacion",idPublicacion );
+        intent.putExtra( "Titulo",titulo );
+        intent.putExtra( "Cuerpo",cuerpo );
+        receptor.onReceive( this,intent );
 
 
 

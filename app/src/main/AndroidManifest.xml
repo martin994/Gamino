@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <receiver
+            android:name=".Servicios.MensajesReceiver"
+            android:enabled="false"
+            android:exported="false"></receiver>
         <!--
      Set custom default icon. This is used when no icon is set for incoming notification messages.
      See README(https://goo.gl/l4GJaQ) for more.
@@ -29,7 +32,6 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
-
 
         <activity
             android:name=".MainActivity"
@@ -93,20 +95,14 @@
         <activity android:name=".ListaDePublicacion" />
         <activity
             android:name=".CargarIntereses"
-
             android:label="@string/title_activity_cargar_intereses" />
 
-        <service
-            android:name=".Servicios.FCMNotificacion">
+        <service android:name=".Servicios.FCMNotificacion">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT">
-                </action>
-
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
             </intent-filter>
-
         </service>
 
-         
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="ar.edu.utn.frsf.isi.dam.gamino.fileprovider"
@@ -120,6 +116,7 @@
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/file_paths" />
+
 
     </application>
 
