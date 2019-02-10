@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AltaPublicacion">
+    tools:context=".AltaPublicacion"
+    android:background="@drawable/gradient"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp">
 
     <TextView
         android:id="@+id/altaPubTVTitulo"
@@ -24,7 +27,8 @@
         android:id="@+id/altaPubTVSubtitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/AltaPubSubtitulo" />
+        android:text="@string/AltaPubSubtitulo"
+        />
 
     <EditText
         android:id="@+id/alta_publicacion_edt_subtitulo"
@@ -61,11 +65,15 @@
         android:id="@+id/alta_publicacion_btn_alta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/AltaPubAlta" />
+        android:layout_marginTop="10dp"
+        android:text="@string/AltaPubAlta"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/alta_publicacion_btn_volver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
         android:text="@string/AltaPubVolver" />
 </LinearLayout>
