@@ -133,7 +133,7 @@ public class Sign_in extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
                 if(firebaseAuth.getCurrentUser()!=null){
-                    Intent intent = new Intent(Sign_in.this, ConfigurarPerfil.class);
+                    Intent intent = new Intent(Sign_in.this, CargarIntereses.class);
                     startActivity(intent);
                     finish();
                 }

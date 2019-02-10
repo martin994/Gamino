@@ -7,7 +7,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ListaDePublicacion"
+
+    android:background="@drawable/gradient"
+
     tools:openDrawer="start">
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listadePublicacionRV"
