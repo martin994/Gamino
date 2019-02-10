@@ -7,7 +7,7 @@ public class Comentario {
     private String cuerpoComentario;
     private String usuario;
     private String idEditor;
-    private Date fechaComentario;
+    private Double fechaComentario;
     private String tokenComentario;
 
 
@@ -54,11 +54,11 @@ public class Comentario {
         this.usuario = usuario;
     }
 
-    public Date getFechaComentario() {
+    public Double getFechaComentario() {
         return fechaComentario;
     }
 
-    public void setFechaComentario(Date fechaComentario) {
+    public void setFechaComentario(Double fechaComentario) {
         this.fechaComentario = fechaComentario;
     }
 }

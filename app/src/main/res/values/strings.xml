@@ -60,6 +60,9 @@
     <string name="title_activity_cargar_intereses">CargarIntereses</string>
     <!-- Strings MyFirebaseMessagingService-->
     <string name="default_notification_channel_id">default_channel</string>
+    <!-- Strings MyFirebaseMessagingService-->
+    <string name="ListaPubCerrar">Cerrar</string>
+    <string name="ListaPubAbrir">Abrir</string>
 
 
 </resources>

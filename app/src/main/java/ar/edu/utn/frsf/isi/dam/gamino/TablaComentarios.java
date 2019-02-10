@@ -23,8 +23,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.UUID;
 
 import ar.edu.utn.frsf.isi.dam.gamino.Modelo.Comentario;
@@ -75,7 +80,7 @@ public class TablaComentarios extends AppCompatActivity {
                 nuevo.setIdEditor(extras.getString("idEditor"));
                 nuevo.setCuerpoComentario(edt_comentar.getText().toString());
                 nuevo.setIdComentario(UUID.randomUUID().toString());
-                nuevo.setFechaComentario(new Date());
+                nuevo.setFechaComentario((double) System.currentTimeMillis());
                 nuevo.setUsuario(mUser.getUid());
                 nuevo.setTokenComentario( tokenMensaje );
                 firebaseDatabase.child( "Comentarios" ).child( nuevo.getIdComentario() ).setValue( nuevo );
@@ -102,7 +107,9 @@ public class TablaComentarios extends AppCompatActivity {
             //NOTA actualmente no ordena por fecha,falta agregar
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-                final ArrayList<String> comentario = new ArrayList<String>();
+
+                final ArrayList<Comentario> listaDeComentarios = new ArrayList<Comentario>();
+                TreeMap<Double,String> comentario=new TreeMap<Double,String>();
                 tokenMensaje =  dataSnapshot.child( "Usuarios" ).child( idEditor ).child( "idMensajeUsuario").getValue(String.class);
                 for (DataSnapshot snapshot : dataSnapshot.child("Publicaciones").child(publicacion.getIdPublicacion()).child("Comentarios").getChildren()) {
 
@@ -110,15 +117,22 @@ public class TablaComentarios extends AppCompatActivity {
 
                         Comentario c = snapshot.getValue(Comentario.class);
                         Usuario u = dataSnapshot.child("Usuarios").child(c.getUsuario()).getValue(Usuario.class);
-                        comentario.add(u.getNombreusuario() + ": " + c.getCuerpoComentario());
-                        publicacion.addComentario(c);
+                        comentario.put(c.getFechaComentario(),u.getNombreusuario() + ": " + c.getCuerpoComentario());
+                        listaDeComentarios.add(c);
+
+
+
 
                 }
 
 
 
                 //se setea el adaptador, el metodo del medio es para settear color negro, ya que se veía blanco
-                ArrayAdapter adaptador = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, comentario){
+
+                for(Comentario c:listaDeComentarios){
+                    publicacion.addComentario(c);
+                }
+                ArrayAdapter adaptador = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, new ArrayList<String>(comentario.values())){
                     @Override
                     public View getView(int position, View convertView, ViewGroup parent){
                         // Get the Item from ListView
