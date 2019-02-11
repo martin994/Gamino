@@ -47,6 +47,12 @@
         android:ems="10"
         android:inputType="textPassword" />
 
+    <CheckBox
+        android:id="@+id/logIncheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desea guardar sus datos?" />
+
     <Button
         android:id="@+id/loginBTNIngresar"
         android:layout_width="match_parent"
