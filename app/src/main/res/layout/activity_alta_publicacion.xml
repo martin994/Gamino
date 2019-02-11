@@ -21,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPersonName" />
 
     <TextView
@@ -35,6 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPersonName" />
 
     <TextView
@@ -48,6 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="143dp"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPersonName" />
 
     <TextView
@@ -65,15 +68,19 @@
         android:id="@+id/alta_publicacion_btn_alta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="@string/AltaPubAlta"
-        android:background="@drawable/button_rounded"/>
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
 
     <Button
         android:id="@+id/alta_publicacion_btn_volver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_rounded"
+        android:text="@string/AltaPubVolver"
         android:layout_marginTop="10dp"
-        android:text="@string/AltaPubVolver" />
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
 </LinearLayout>
