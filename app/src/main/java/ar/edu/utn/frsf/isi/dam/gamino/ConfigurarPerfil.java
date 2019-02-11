@@ -58,7 +58,7 @@ import ar.edu.utn.frsf.isi.dam.gamino.Modelo.Usuario;
 
 public class ConfigurarPerfil extends AppCompatActivity {
 
-    private static final int PICK_PHOTO = 1;
+    private static final int PICK_PHOTO = 2;
 
     //componentes de interfaz
 
@@ -76,7 +76,7 @@ public class ConfigurarPerfil extends AppCompatActivity {
 
 
 
-    private final int REQUEST_IMAGE_SAVE=2;
+    private final int REQUEST_IMAGE_SAVE=1;
     private String pathFoto;
 
     private Boolean tieneFoto=false;
@@ -95,7 +95,8 @@ public class ConfigurarPerfil extends AppCompatActivity {
         btn_Omitir= (Button) findViewById(R.id.Configurar_Perfil_btn_Omitir);
         img_Avatar= (ImageView) findViewById(R.id.Configurar_Perfil_img_Avatar);
         tV_Usuario= (TextView) findViewById(R.id.Configurar_Perfil_tV_Usuario);
-        img_Avatar.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        progressBar=(ProgressBar) findViewById(R.id.configurar_perfil_progress_avatar);
+        //img_Avatar.setScaleType(ImageView.ScaleType.CENTER_CROP);
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         cargarUsuarioActual();
 
@@ -106,27 +107,55 @@ public class ConfigurarPerfil extends AppCompatActivity {
 
 
 
-        /*btn_Capturar_Foto.setOnClickListener(new View.OnClickListener() {
+        btn_Capturar_Foto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     if (ContextCompat.checkSelfPermission(ConfigurarPerfil.this,
                             Manifest.permission.CAMERA)
                             != PackageManager.PERMISSION_GRANTED) {
+
+                        ActivityCompat.requestPermissions( ConfigurarPerfil.this, new String[]{Manifest.permission.CAMERA}, 1);
+
+                    }if (ContextCompat.checkSelfPermission(ConfigurarPerfil.this,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                            != PackageManager.PERMISSION_GRANTED) {
+
+                        ActivityCompat.requestPermissions( ConfigurarPerfil.this, new String[]{Manifest.permission.CAMERA}, 1);
+
+                    }if (ContextCompat.checkSelfPermission(ConfigurarPerfil.this,
+                            Manifest.permission.READ_EXTERNAL_STORAGE)
+                            != PackageManager.PERMISSION_GRANTED) {
+
                         ActivityCompat.requestPermissions( ConfigurarPerfil.this, new String[]{Manifest.permission.CAMERA}, 1);
 
                     } else {
                         sacarGuardarFoto();
-
+                        cargarUsuarioActual();
                     }
                 }
             }
 
-        });*/
+        });
         btn_Cargar_Foto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cargarImagenGaleria();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                if (ContextCompat.checkSelfPermission(ConfigurarPerfil.this,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions( ConfigurarPerfil.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+
+                }if (ContextCompat.checkSelfPermission(ConfigurarPerfil.this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+
+                    ActivityCompat.requestPermissions( ConfigurarPerfil.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+
+                }else {cargarImagenGaleria();
+                    cargarUsuarioActual();
+                }
             }
         });
 
@@ -176,12 +205,12 @@ public class ConfigurarPerfil extends AppCompatActivity {
             try {
                 Bitmap imageBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), Uri.fromFile(file));
                 if (imageBitmap != null) {
-                    Bitmap b = Bitmap.createScaledBitmap(imageBitmap , img_Avatar.getWidth(), img_Avatar.getHeight(), true);
+                    //Bitmap b = Bitmap.createScaledBitmap(imageBitmap , img_Avatar.getWidth(), img_Avatar.getHeight(), true);
                     //imageBitmap.setHeight(img_Avatar.getHeight());
-//                    imageBitmap.setWidth(img_Avatar.getWidth());
+                    //imageBitmap.setWidth(img_Avatar.getWidth());
                     //img_Avatar.setScaleType(ImageView.ScaleType.FIT_XY);
                     cargarFotoUsuario(Uri.fromFile(file));
-                    img_Avatar.setImageBitmap(b);
+                    img_Avatar.setImageBitmap(imageBitmap);
                     tieneFoto=true;
                 }
 
@@ -198,9 +227,9 @@ public class ConfigurarPerfil extends AppCompatActivity {
 
             try {
                 Bitmap bitmapImagen = MediaStore.Images.Media.getBitmap(getContentResolver(),filePath);
-                Bitmap b = Bitmap.createScaledBitmap(bitmapImagen , img_Avatar.getWidth(), img_Avatar.getHeight(), true);
+//                Bitmap b = Bitmap.createScaledBitmap(bitmapImagen , img_Avatar.getWidth(), img_Avatar.getHeight(), true);
                 cargarFotoUsuario(filePath);
-                img_Avatar.setImageBitmap(b);
+                img_Avatar.setImageBitmap(bitmapImagen);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -233,7 +262,7 @@ public class ConfigurarPerfil extends AppCompatActivity {
             }
 
             if ( archivoFoto!= null) {
-                Uri photoURI = FileProvider.getUriForFile(getApplicationContext(),
+                Uri photoURI = FileProvider.getUriForFile(this.getApplicationContext(),
                         "ar.edu.utn.frsf.isi.dam.gamino.fileprovider",
                         archivoFoto);
 
@@ -301,14 +330,14 @@ public class ConfigurarPerfil extends AppCompatActivity {
 
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-
+                            progressBar.setVisibility( View.GONE );
                             return false;
                         }
 
                         @Override
                         public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-
-
+                            progressBar.setVisibility( View.GONE );
+                            img_Avatar.setVisibility( View.VISIBLE );
                             return false;
                         }
                     }).into(img_Avatar);
