@@ -56,7 +56,7 @@ public class AdaptadorPublicacion extends RecyclerView.Adapter<AdaptadorPublicac
             viewHolderPublicacion.tituloPublicacion.setText( publicacionLista.get( i ).getTituloPublicacion() );
             viewHolderPublicacion.autorPublicacion.setText(  publicacionLista.get( i ).getEditor().getNombreusuario());
             viewHolderPublicacion.cuerpoPublicacion.setText( publicacionLista.get( i ).getSubtituloPublicacion());
-            //Verificar bien como traer FireBase las imagenes para saber como se setea
+
             //viewHolderPublicacion.imagenDeLaPubliacion.setImageBitmap( publicacionLista.get( i ).getImagenPublicacion());
 
             Glide.with(mcontext).load(Uri.parse(interes.getIconoInteres())).addListener(new RequestListener<Drawable>() {
