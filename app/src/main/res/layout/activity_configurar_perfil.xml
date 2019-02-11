@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="141dp"
+        android:layout_height="182dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -26,41 +26,51 @@
         <TextView
             android:id="@+id/Configurar_Perfil_tV_Usuario"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="43dp"
             android:layout_weight="1"
-            android:text="@string/ConfUsuario" />
+            android:text="@string/ConfUsuario"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/Configurar_Perfil_btn_Intereses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="120dp"
         android:text="@string/ConfIntereses"
-        android:background="@drawable/button_rounded"/>
+        android:background="@drawable/button_rounded"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
 
     <Button
         android:id="@+id/Configurar_Perfil_btn_Capturar_Foto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/button_rounded"
+
         android:text="@string/ConfCapturar"
-        android:visibility="visible" />
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
+
 
     <Button
         android:id="@+id/Configurar_Perfil_btn_Cargar_Foto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="@string/ConfCargar"
-        android:background="@drawable/button_rounded"/>
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
 
     <Button
         android:id="@+id/Configurar_Perfil_btn_Omitir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:background="@drawable/button_rounded"
-        android:text="@string/ConfAvanzar" />
+        android:text="@string/ConfAvanzar"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
 </LinearLayout>
