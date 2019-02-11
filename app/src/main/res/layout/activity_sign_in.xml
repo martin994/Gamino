@@ -27,6 +27,7 @@
         android:id="@+id/signETCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#ffffff"
         android:ems="10"
         android:inputType="textEmailAddress" />
 
@@ -41,6 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPersonName" />
 
     <TextView
@@ -54,6 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPassword" />
 
     <TextView
@@ -67,6 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPassword" />
 
     <Button
@@ -74,6 +78,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/SignRegistrar"
-        android:background="@drawable/button_rounded"/>
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
 
 </LinearLayout>

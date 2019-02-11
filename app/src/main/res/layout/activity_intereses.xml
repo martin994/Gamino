@@ -23,12 +23,20 @@
         android:id="@+id/InteresesBtnConfirmar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/InteresesConfirmar" />
+        android:text="@string/InteresesConfirmar"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
 
     <Button
         android:id="@+id/InteresesBtnOmitir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/InteresesOmitir" />
+        android:text="@string/InteresesOmitir"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>
 
 </LinearLayout>
