@@ -73,7 +73,7 @@ public class VerPublicacion extends AppCompatActivity {
         btn_volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(VerPublicacion.this, ConfigurarPerfil.class);
+                Intent i = new Intent(VerPublicacion.this, ListaDePublicacion.class);
                 startActivity(i);
 
             }
