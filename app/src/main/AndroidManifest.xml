@@ -36,23 +36,18 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Sign_in"
-            android:label="Sign in">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="Sign in"
+            android:screenOrientation="portrait">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".Log_in">
+        <activity android:name=".Log_in"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,46 +56,35 @@
         </activity>
         <activity
             android:name=".ConfigurarPerfil"
-            android:label="Perzonalizar Perfil">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="Perzonalizar Perfil"
+            android:screenOrientation="portrait">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".VerPublicacion">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".VerPublicacion"
+            android:screenOrientation="portrait">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".TablaComentarios"
-            android:label="Comentarios">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="Comentarios"
+            android:screenOrientation="portrait">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".AltaPublicacion">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".AltaPublicacion"
+            android:screenOrientation="portrait">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".ListaDeIntereses" />
-        <activity android:name=".ListaDePublicacion" />
+        <activity android:name=".ListaDeIntereses"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ListaDePublicacion"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CargarIntereses"
-            android:label="@string/title_activity_cargar_intereses" />
+            android:label="@string/title_activity_cargar_intereses"
+            android:screenOrientation="portrait"/>
 
         <service android:name=".Servicios.FCMNotificacion">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
-            </intent-filter>
+
         </service>
 
         <provider
