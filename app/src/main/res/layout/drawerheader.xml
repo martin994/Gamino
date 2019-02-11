@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/header_img_avatar"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView

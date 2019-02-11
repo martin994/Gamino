@@ -15,11 +15,19 @@
         android:layout_height="141dp"
         android:orientation="horizontal">
 
+        <ProgressBar
+            android:id="@+id/configurar_perfil_progress_avatar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_weight="1" />
+
         <ImageView
             android:id="@+id/Configurar_Perfil_img_Avatar"
-            android:layout_width="46dp"
-            android:layout_height="128dp"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
             android:layout_weight="1"
+            android:visibility="gone"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <TextView
