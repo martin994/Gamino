@@ -1,11 +1,14 @@
 package ar.edu.utn.frsf.isi.dam.gamino;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,6 +31,7 @@ public class Log_in extends AppCompatActivity {
 
     private EditText edtCorreoElectronico;
     private EditText edtContraseña;
+    private CheckBox checkBoxGuardar;
     private Button btnLoig;
     private Button btnSign;
     private DatabaseReference myRefDatabase;
@@ -53,6 +57,13 @@ public class Log_in extends AppCompatActivity {
         edtContraseña=findViewById( R.id.loginETContraseña );
         btnSign=findViewById( R.id.loginBTNRegistrarse );
         btnLoig=findViewById( R.id.loginBTNIngresar );
+        checkBoxGuardar=findViewById( R.id.logIncheckBox );
+
+
+
+
+
+         cargarPreferencias();
 
         btnSign.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -68,6 +79,16 @@ public class Log_in extends AppCompatActivity {
                 correUsuario=edtCorreoElectronico.getText().toString();
                 contraseñaUsuario=edtContraseña.getText().toString();
                 ingresoUsuario( correUsuario,contraseñaUsuario);
+
+                if(checkBoxGuardar.isChecked()){
+
+                    guardarPreferencias( correUsuario,contraseñaUsuario,checkBoxGuardar.isChecked() );
+
+                }
+                else {
+                    limpiarPrefrencias();
+                }
+
 
 
             }
@@ -95,7 +116,7 @@ public class Log_in extends AppCompatActivity {
 
                 }
                 else {
-                    Intent intent1 = new Intent(Log_in.this, CargarIntereses.class);
+                    Intent intent1 = new Intent(Log_in.this, ConfigurarPerfil.class);
                     startActivity(intent1);
                 }
 
@@ -114,5 +135,41 @@ public class Log_in extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
     }
 
+    private void guardarPreferencias(String correUsuario, String contraseñaUsuario, Boolean estadoCheck){
 
+        SharedPreferences preferences= getSharedPreferences( "DatosUsuario", Context.MODE_PRIVATE );
+
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putString( "correoUsuario",correUsuario );
+        editor.putString( "contraseniaUsuario",contraseñaUsuario );
+        editor.putBoolean( "estadoBtnguardar",estadoCheck );
+
+        editor.commit();
+
+    }
+
+
+    private void cargarPreferencias(){
+
+        SharedPreferences preferences=getSharedPreferences( "DatosUsuario",Context.MODE_PRIVATE );
+
+        if (preferences.getBoolean( "estadoBtnguardar",false )){
+            edtCorreoElectronico.setText( preferences.getString( "correoUsuario","" ));
+
+            edtContraseña.setText( preferences.getString( "contraseniaUsuario","" ));
+
+            checkBoxGuardar.setChecked( true );
+
+        }
+
+
+
+
+    }
+
+    private void limpiarPrefrencias(){
+        SharedPreferences preferences=getSharedPreferences( "DatosUsuario",Context.MODE_PRIVATE );
+        preferences.edit().clear().commit();
+
+    }
 }
