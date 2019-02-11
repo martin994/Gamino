@@ -84,7 +84,9 @@
             android:screenOrientation="portrait"/>
 
         <service android:name=".Servicios.FCMNotificacion">
-
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+            </intent-filter>
         </service>
 
         <provider

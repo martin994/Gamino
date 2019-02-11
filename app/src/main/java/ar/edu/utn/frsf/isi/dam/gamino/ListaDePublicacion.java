@@ -127,7 +127,7 @@ public class ListaDePublicacion extends AppCompatActivity implements NavigationV
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mUser = FirebaseAuth.getInstance().getCurrentUser();
                 DataSnapshot usuarioInteres=dataSnapshot.child("Usuarios").child(mUser.getUid()).child("Intereses Usuario");
-
+                publicaciones.clear();
                 interes=usuarioInteres.getValue(Interes.class);
 
 
@@ -156,7 +156,7 @@ public class ListaDePublicacion extends AppCompatActivity implements NavigationV
                 }else if(publicaciones!=null){
 
                         for(Publicacion p : publicaciones){
-                            if(p.getidInteres().equals(interes.getIdInteres())){
+                            if(p.getidInteres().equals(interes.getIdInteres()) ){
 
                                 publicacionesListadas.add(p);
                             }
