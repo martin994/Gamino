@@ -17,6 +17,11 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,11 +37,12 @@ public class AdaptadorPublicacion extends RecyclerView.Adapter<AdaptadorPublicac
     private Interes interes;
     private Context mcontext;
     private View.OnClickListener listener;
-
+    private DatabaseReference dbRef;
     public AdaptadorPublicacion(ArrayList<Publicacion> publicacionLista, Interes interes,Context mcontext) {
         this.publicacionLista = publicacionLista;
          this.interes=interes;
          this.mcontext=mcontext;
+         dbRef= FirebaseDatabase.getInstance().getReference();
     }
 
     @NonNull
@@ -51,7 +57,40 @@ public class AdaptadorPublicacion extends RecyclerView.Adapter<AdaptadorPublicac
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderPublicacion viewHolderPublicacion, int i) {
+    public void onBindViewHolder(@NonNull final ViewHolderPublicacion viewHolderPublicacion, final int i) {
+        if (interes == null) {
+            viewHolderPublicacion.tituloPublicacion.setText( publicacionLista.get( i ).getTituloPublicacion() );
+            viewHolderPublicacion.autorPublicacion.setText(  publicacionLista.get( i ).getEditor().getNombreusuario());
+            viewHolderPublicacion.cuerpoPublicacion.setText( publicacionLista.get( i ).getSubtituloPublicacion());
+
+            dbRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Interes interes2= dataSnapshot.child("Intereses").child(publicacionLista.get(i).getidInteres()).getValue(Interes.class);
+                    Glide.with(mcontext).load(Uri.parse(interes2.getIconoInteres())).addListener(new RequestListener<Drawable>() {
+
+                        @Override
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+
+
+                            return false;
+                        }
+                    }).into(viewHolderPublicacion.imagenDeLaPubliacion);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+        }else
         if(interes.getIdInteres().equals(publicacionLista.get( i ).getidInteres())){
             viewHolderPublicacion.tituloPublicacion.setText( publicacionLista.get( i ).getTituloPublicacion() );
             viewHolderPublicacion.autorPublicacion.setText(  publicacionLista.get( i ).getEditor().getNombreusuario());

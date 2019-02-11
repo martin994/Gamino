@@ -29,7 +29,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:clickable="true" />
+            android:clickable="true"
+            android:src="@drawable/pencil" />
 
     </RelativeLayout>
 
@@ -39,7 +40,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/colorPrimaryDark"
-        android:visibility="visible"
+
         app:headerLayout="@layout/drawerheader"
         app:itemTextColor="@color/colorAccent"
         app:menu="@menu/drawermenu"></android.support.design.widget.NavigationView>

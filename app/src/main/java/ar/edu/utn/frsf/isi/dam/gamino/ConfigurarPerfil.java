@@ -95,7 +95,7 @@ public class ConfigurarPerfil extends AppCompatActivity {
         btn_Omitir= (Button) findViewById(R.id.Configurar_Perfil_btn_Omitir);
         img_Avatar= (ImageView) findViewById(R.id.Configurar_Perfil_img_Avatar);
         tV_Usuario= (TextView) findViewById(R.id.Configurar_Perfil_tV_Usuario);
-        progressBar=(ProgressBar) findViewById(R.id.configurar_perfil_progress_avatar);
+        //progressBar=(ProgressBar) findViewById(R.id.configurar_perfil_progress_avatar);
         //img_Avatar.setScaleType(ImageView.ScaleType.CENTER_CROP);
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         cargarUsuarioActual();
@@ -330,18 +330,18 @@ public class ConfigurarPerfil extends AppCompatActivity {
 
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                            progressBar.setVisibility( View.GONE );
+                            //progressBar.setVisibility( View.GONE );
                             return false;
                         }
 
                         @Override
                         public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                            progressBar.setVisibility( View.GONE );
-                            img_Avatar.setVisibility( View.VISIBLE );
+                            //progressBar.setVisibility( View.GONE );
+                            //img_Avatar.setVisibility( View.VISIBLE );
                             return false;
                         }
                     }).into(img_Avatar);
-                }
+                }else img_Avatar.setImageResource(R.drawable.ok);
 
             }
 
