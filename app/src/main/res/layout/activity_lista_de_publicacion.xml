@@ -32,14 +32,14 @@
             android:clickable="true" />
 
     </RelativeLayout>
+
     <android.support.design.widget.NavigationView
         android:id="@+id/lista_pub_nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
-        app:itemTextColor="@color/colorAccent"
-        app:menu="@menu/drawermenu"
         android:layout_gravity="start"
-        app:headerLayout="@layout/drawerheader">
-    </android.support.design.widget.NavigationView>
+        android:background="@color/colorPrimaryDark"
+        app:headerLayout="@layout/drawerheader"
+        app:itemTextColor="@color/colorAccent"
+        app:menu="@menu/drawermenu"></android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>

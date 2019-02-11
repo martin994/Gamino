@@ -148,9 +148,11 @@ public class ListaDePublicacion extends AppCompatActivity implements NavigationV
                             return Double.compare(o1.getTimeInMillis(),o2.getTimeInMillis());
                         }
                     });
+
+
                     publicacionesListadas.addAll(publicaciones);
                     adaptadorPublicacion=new AdaptadorPublicacion( publicacionesListadas, interes, getApplicationContext());
-                }else{
+                }else if(publicaciones!=null){
 
                         for(Publicacion p : publicaciones){
                             if(p.getidInteres().equals(interes.getIdInteres())){
@@ -177,8 +179,9 @@ public class ListaDePublicacion extends AppCompatActivity implements NavigationV
                             startActivity(i);
                         }
                     });
-                    recyclerViewPublicacion.setAdapter( adaptadorPublicacion );
+
                 }
+                recyclerViewPublicacion.setAdapter( adaptadorPublicacion );
 
             }
 
@@ -203,32 +206,32 @@ public class ListaDePublicacion extends AppCompatActivity implements NavigationV
                 user = dataSnapshot.child("Usuarios").child(mUser.getUid()).getValue(Usuario.class);
 
                 String ruta = dataSnapshot.child("Usuarios").child(mUser.getUid()).child("FotoPerfilUsuario").getValue(String.class);
-                user.setFotoPerfilUsuario(Uri.parse(ruta));
-                tV_usuario.setText("Usuario: "+ user.getNombreusuario());
-                if(user.getFotoPerfilUsuario()!=null)
-                    Glide.with(getApplicationContext()).load(user.getFotoPerfilUsuario()).addListener(new RequestListener<Drawable>() {
+                if (ruta != null) {
+                    user.setFotoPerfilUsuario(Uri.parse(ruta));
+                    tV_usuario.setText("Usuario: " + user.getNombreusuario());
+                    if (user.getFotoPerfilUsuario() != null)
+                        Glide.with(getApplicationContext()).load(user.getFotoPerfilUsuario()).addListener(new RequestListener<Drawable>() {
 
-                        @Override
-                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                            @Override
+                            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
 
-                            return false;
-                        }
+                                return false;
+                            }
 
-                        @Override
-                        public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                            @Override
+                            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
 
 
-                            return false;
-                        }
-                    }).into(img_avatar);
+                                return false;
+                            }
+                        }).into(img_avatar);
+                }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
-
 
     }
 
