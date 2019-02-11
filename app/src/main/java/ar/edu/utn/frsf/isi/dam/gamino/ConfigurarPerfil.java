@@ -341,7 +341,7 @@ public class ConfigurarPerfil extends AppCompatActivity {
                             return false;
                         }
                     }).into(img_Avatar);
-                }
+                }else img_Avatar.setImageResource(R.drawable.ok);
 
             }
 

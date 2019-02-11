@@ -31,9 +31,9 @@
         android:id="@+id/loginETUsuario"
         android:layout_width="355dp"
         android:layout_height="55dp"
-        android:ems="10"
         android:background="#ffffff"
-        android:inputType="textPersonName" />
+        android:ems="10"
+        android:inputType="textPersonName|textEmailAddress" />
 
     <TextView
         android:id="@+id/loginTVContraseña"
