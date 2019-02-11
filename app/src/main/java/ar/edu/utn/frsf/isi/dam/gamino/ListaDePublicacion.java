@@ -88,12 +88,13 @@ public class ListaDePublicacion extends AppCompatActivity implements NavigationV
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.menu_settings:
-                        Intent i = new Intent(ListaDePublicacion.this, ConfigurarPerfil.class);
-                        startActivity(i);
+                        Intent i1 = new Intent(ListaDePublicacion.this, ConfigurarPerfil.class);
+                        startActivity(i1);
                         break;
                     case R.id.menu_logout:
                         FirebaseAuth.getInstance().signOut();
-                        finishAffinity();
+                        Intent i2 = new Intent(ListaDePublicacion.this, Log_in.class);
+                        startActivity(i2);
                         break;
                     case R.id.menu_exit:
 
