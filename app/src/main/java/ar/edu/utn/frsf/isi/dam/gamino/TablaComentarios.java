@@ -87,6 +87,8 @@ public class TablaComentarios extends AppCompatActivity {
                 firebaseDatabasePublicar.child("Publicaciones").child(publicacion.getIdPublicacion()).child("Comentarios").child(nuevo.getIdComentario()).setValue(nuevo);
 
                 cargarListView(publicacion.getIdPublicacion(),extras.getString( "idEditor" ));
+                edt_comentar.setText("");
+
             }
         });
         btn_volver.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +150,9 @@ public class TablaComentarios extends AppCompatActivity {
                         return view;
                     }
                 };
+
                 lV_comentarios.setAdapter(adaptador);
+                lV_comentarios.setSelection(adaptador.getCount() - 1);
             }
 
 
