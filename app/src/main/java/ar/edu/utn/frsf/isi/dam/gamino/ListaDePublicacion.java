@@ -107,6 +107,8 @@ public class ListaDePublicacion extends AppCompatActivity implements NavigationV
             }
         });
         cargarNavigatorDrawer();
+
+
         cargarLVPublicaciones();
 
         fAB_publicar.setOnClickListener(new View.OnClickListener() {
@@ -134,6 +136,7 @@ public class ListaDePublicacion extends AppCompatActivity implements NavigationV
 
 
                 for(DataSnapshot d: dataSnapshot.child("Publicaciones").getChildren()){
+
                     Publicacion p =d.getValue(Publicacion.class);
                     Usuario u = dataSnapshot.child("Usuarios").child(p.getEditor().getIdUsuario()).getValue(Usuario.class);
 
@@ -141,7 +144,7 @@ public class ListaDePublicacion extends AppCompatActivity implements NavigationV
                     publicaciones.add(p);
 
                 }
-
+                publicacionesListadas.clear();
                 if(interes==null){
                     Collections.sort(publicaciones, new Comparator<Publicacion>() {
                         @Override
@@ -152,7 +155,19 @@ public class ListaDePublicacion extends AppCompatActivity implements NavigationV
 
 
                     publicacionesListadas.addAll(publicaciones);
+                    if(adaptadorPublicacion != null) adaptadorPublicacion=null;
                     adaptadorPublicacion=new AdaptadorPublicacion( publicacionesListadas, interes, getApplicationContext());
+                    adaptadorPublicacion.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int posicion = recyclerViewPublicacion.getChildAdapterPosition( v );
+
+
+                            Intent i = new Intent(ListaDePublicacion.this, VerPublicacion.class);
+                            i.putExtra("Publicacion",publicacionesListadas.get( posicion ).getIdPublicacion());
+                            startActivity(i);
+                        }
+                    });
                 }else if(publicaciones!=null){
 
                         for(Publicacion p : publicaciones){
