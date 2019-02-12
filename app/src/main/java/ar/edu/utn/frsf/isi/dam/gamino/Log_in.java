@@ -101,6 +101,14 @@ public class Log_in extends AppCompatActivity {
                 if(firebaseAuth.getCurrentUser()!=null){
                     Intent intent = new Intent(Log_in.this, ListaDePublicacion.class);
                     startActivity(intent);
+                    finish();
+                }
+                else {
+                    Intent intent = new Intent(Log_in.this, Log_in.class);
+                    startActivity(intent);
+                    finish();
+
+
                 }
 
             }
