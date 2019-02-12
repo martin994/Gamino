@@ -36,11 +36,11 @@
         android:id="@+id/tabla_comentarios_btn_comentar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ComPublicar"
-        android:background="@drawable/button_rounded"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"/>/>
+        android:background="@drawable/button_rounded"
+        android:text="@string/ComPublicar" />/>
 
     <Button
         android:id="@+id/tabla_comentarios_btn_volver"

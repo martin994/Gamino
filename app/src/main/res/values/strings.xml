@@ -12,7 +12,7 @@
 
 
     <!-- Strings de pantalla Log_in -->
-    <string name="LogUsuario">Usuario</string>
+    <string name="LogUsuario">Correo</string>
     <string name="LogContraseña">Contraseña</string>
     <string name="LogIngresar">Login</string>
     <string name="LogRegistrar">Sign-in</string>
