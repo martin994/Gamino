@@ -103,13 +103,7 @@ public class Log_in extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-                else {
-                    Intent intent = new Intent(Log_in.this, Log_in.class);
-                    startActivity(intent);
-                    finish();
-
-
-                }
+                
 
             }
         };
