@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ListaDeIntereses">
+    tools:context=".ListaDeIntereses"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
 
 
     <TextView
@@ -17,18 +19,28 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/InteresesRV"
         android:layout_width="match_parent"
-        android:layout_height="356dp" />
+        android:layout_height="356dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
     <Button
         android:id="@+id/InteresesBtnConfirmar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/InteresesConfirmar" />
+        android:text="@string/InteresesConfirmar"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
 
     <Button
         android:id="@+id/InteresesBtnOmitir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/InteresesOmitir" />
+        android:text="@string/InteresesOmitir"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>
 
 </LinearLayout>

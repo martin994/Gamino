@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,9 +49,11 @@ public class AltaPublicacion extends AppCompatActivity {
     private ArrayAdapter<String> adaptadorIntereses;
     private List<Interes> intereses;
     private Publicacion p;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        int posicion;
         setContentView(R.layout.activity_alta_publicacion);
         edt_titulo = (EditText) findViewById(R.id.alta_publicacion_edt_titulo);
         edt_subtitulo = (EditText) findViewById(R.id.alta_publicacion_edt_subtitulo);
@@ -61,6 +64,17 @@ public class AltaPublicacion extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance().getReference();
         firebaseDatabaseChild = firebaseDatabase.child("Intereses");
         mStorageReference= FirebaseStorage.getInstance().getReference();
+        sp_intereses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         cargarAdaptador();
 
 
@@ -81,11 +95,11 @@ public class AltaPublicacion extends AppCompatActivity {
                     p.setTituloPublicacion(edt_titulo.getText().toString());
                     p.setSubtituloPublicacion(edt_subtitulo.getText().toString());
                     p.setCuerpoPublicacion(edt_cuerpo.getText().toString());
-
+                    p.setTimeInMillis(System.currentTimeMillis());
 
 
                     for (Interes i : intereses) {
-
+                        if(i.getNombreInteres().equals( sp_intereses.getSelectedItem().toString()))
                             p.setidInteres(i.getIdInteres());
 
                     }
@@ -106,6 +120,7 @@ public class AltaPublicacion extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
 
 
     }

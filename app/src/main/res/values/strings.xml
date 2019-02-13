@@ -12,7 +12,7 @@
 
 
     <!-- Strings de pantalla Log_in -->
-    <string name="LogUsuario">Usuario</string>
+    <string name="LogUsuario">Correo</string>
     <string name="LogContraseña">Contraseña</string>
     <string name="LogIngresar">Login</string>
     <string name="LogRegistrar">Sign-in</string>
@@ -60,6 +60,9 @@
     <string name="title_activity_cargar_intereses">CargarIntereses</string>
     <!-- Strings MyFirebaseMessagingService-->
     <string name="default_notification_channel_id">default_channel</string>
+    <!-- Strings MyFirebaseMessagingService-->
+    <string name="ListaPubCerrar">Cerrar</string>
+    <string name="ListaPubAbrir">Abrir</string>
 
 
 </resources>

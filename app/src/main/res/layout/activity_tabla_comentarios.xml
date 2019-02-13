@@ -5,7 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TablaComentarios">
+    tools:context=".TablaComentarios"
+    android:background="@drawable/gradient"
+
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp">>
+
     <!--ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"-->
@@ -25,19 +30,26 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/tabla_comentarios_btn_comentar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ComPublicar" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/button_rounded"
+        android:text="@string/ComPublicar" />/>
 
     <Button
         android:id="@+id/tabla_comentarios_btn_volver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
         android:text="@string/ComVolver" />
     <!--/ScrollView-->
 </LinearLayout>

@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AltaPublicacion">
+    tools:context=".AltaPublicacion"
+    android:background="@drawable/gradient"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp">
 
     <TextView
         android:id="@+id/altaPubTVTitulo"
@@ -18,19 +21,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/altaPubTVSubtitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/AltaPubSubtitulo" />
+        android:text="@string/AltaPubSubtitulo"
+        />
 
     <EditText
         android:id="@+id/alta_publicacion_edt_subtitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPersonName" />
 
     <TextView
@@ -44,6 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="143dp"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPersonName" />
 
     <TextView
@@ -61,11 +68,19 @@
         android:id="@+id/alta_publicacion_btn_alta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/AltaPubAlta" />
+        android:text="@string/AltaPubAlta"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
 
     <Button
         android:id="@+id/alta_publicacion_btn_volver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/AltaPubVolver" />
+        android:background="@drawable/button_rounded"
+        android:text="@string/AltaPubVolver"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
 </LinearLayout>

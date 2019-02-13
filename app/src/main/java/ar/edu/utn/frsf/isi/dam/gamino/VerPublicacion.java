@@ -26,6 +26,7 @@ public class VerPublicacion extends AppCompatActivity {
     private DatabaseReference firebaseDatabase;
     private Button btn_volver;
     private Publicacion p;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Declaraciones
@@ -38,6 +39,7 @@ public class VerPublicacion extends AppCompatActivity {
         btn_comentar=(Button) findViewById(R.id.ver_publicacion_btn_comentar);
         btn_volver=(Button) findViewById(R.id.ver_publicacion_btn_volver);
         final String idPublicacion = extras.getString("Publicacion");
+
         firebaseDatabase = FirebaseDatabase.getInstance().getReference();
         firebaseDatabase = firebaseDatabase.child("Publicaciones").child(idPublicacion);
         //se busca la publicacion para el id pasado como extra en el intent
@@ -71,7 +73,7 @@ public class VerPublicacion extends AppCompatActivity {
         btn_volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(VerPublicacion.this, ConfigurarPerfil.class);
+                Intent i = new Intent(VerPublicacion.this, ListaDePublicacion.class);
                 startActivity(i);
 
             }

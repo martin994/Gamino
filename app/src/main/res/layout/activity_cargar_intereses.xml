@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CargarIntereses">
+    android:background="@drawable/gradient"
+    tools:context=".CargarIntereses"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp">>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,12 +41,16 @@
         android:id="@+id/cargarInteresBTNImagen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
         android:text="Cargar Imagen" />
 
     <Button
         android:id="@+id/cargarInteresBTNCargar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
         android:text="Cargar Interes" />
 
 </LinearLayout>

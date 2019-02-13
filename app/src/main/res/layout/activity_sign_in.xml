@@ -5,8 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/gradient"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
 
     tools:context=".Sign_in">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="147dp"
+        app:srcCompat="@drawable/fondofinal" />
 
     <TextView
         android:id="@+id/signTVCorreo"
@@ -18,6 +27,7 @@
         android:id="@+id/signETCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#ffffff"
         android:ems="10"
         android:inputType="textEmailAddress" />
 
@@ -32,6 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPersonName" />
 
     <TextView
@@ -45,6 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPassword" />
 
     <TextView
@@ -58,11 +70,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#ffffff"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/signBTNRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/SignRegistrar" />
+        android:text="@string/SignRegistrar"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>/>
+
 </LinearLayout>

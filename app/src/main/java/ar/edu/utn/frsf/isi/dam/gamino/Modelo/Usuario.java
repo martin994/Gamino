@@ -15,7 +15,7 @@ public class Usuario {
    private ArrayList<Interes> listaInteres;
    private ArrayList<Publicacion> listaDePublicaciones;
    private ArrayList<Publicacion> listaDePublicacionesPuntuadas;
-
+    private String idMensajeUsuario;
     public String getIdMensajeUsuario() {
         return idMensajeUsuario;
     }
@@ -24,7 +24,7 @@ public class Usuario {
         this.idMensajeUsuario = idMensajeUsuario;
     }
 
-    private String idMensajeUsuario;
+
 
 
 

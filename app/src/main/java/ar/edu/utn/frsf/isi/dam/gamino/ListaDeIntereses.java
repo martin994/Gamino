@@ -1,5 +1,6 @@
 package ar.edu.utn.frsf.isi.dam.gamino;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class ListaDeIntereses extends AppCompatActivity {
     private DatabaseReference firebaseDatabaseChild;
 
     private Button btnConfirmarIntereses;
+    private Button btn_Omitir;
 
 
 
@@ -45,6 +47,7 @@ public class ListaDeIntereses extends AppCompatActivity {
         firebaseDatabaseChild=firebaseDatabase.child( "Intereses" );
         recyclerViewIntereses=(RecyclerView) findViewById( R.id.InteresesRV);
         btnConfirmarIntereses=(Button)findViewById( R.id.InteresesBtnConfirmar );
+        btn_Omitir=(Button) findViewById(R.id.InteresesBtnOmitir);
         recyclerViewIntereses.setLayoutManager( new LinearLayoutManager( this ) );
         firebaseAuth=FirebaseAuth.getInstance();
         cargarAdaptador();
@@ -54,11 +57,19 @@ public class ListaDeIntereses extends AppCompatActivity {
         btnConfirmarIntereses.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(ListaDeIntereses.this, ListaDePublicacion.class);
+                startActivity(i);
 
 
             }
         } );
+        btn_Omitir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ListaDeIntereses.this ,ConfigurarPerfil.class);
+                startActivity(i);
+            }
+        });
 
 
 

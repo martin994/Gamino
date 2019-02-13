@@ -17,12 +17,21 @@ public class Publicacion {
     private String cuerpoPublicacion;
     private String idInteres;
     private Double puntuacion;
+    private Double timeInMillis;
     private ArrayList<Comentario> listaDeComentarios;
     private Uri imagenPublicacion;//Verificar bien como traer FireBase las imagenes para saber como se setea
 
     public Publicacion(){
         listaDeComentarios = new ArrayList<Comentario>();
 
+    }
+
+    public double getTimeInMillis() {
+        return timeInMillis;
+    }
+
+    public void setTimeInMillis(double timeInMillis) {
+        this.timeInMillis = timeInMillis;
     }
 
     public void addComentario(Comentario c){
